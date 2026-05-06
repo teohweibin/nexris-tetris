@@ -2,6 +2,8 @@
 
 > A sleek, single-file cyberpunk block-puzzle game built with pure HTML, CSS, and the Web Audio API.
 
+🎮 **Play it live:** [https://teohweibin.github.io/nexris-tetris/](https://teohweibin.github.io/nexris-tetris/)
+
 ---
 
 ## Features
