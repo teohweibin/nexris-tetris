@@ -249,26 +249,45 @@
       100% { filter: brightness(1); }
     }
 
-    /* Theme Switcher */
+    /* Theme Switcher — fixed top-right */
     .theme-bar {
-      position: relative; z-index: 2;
-      display: flex; gap: 10px; justify-content: center; align-items: center;
-      margin-top: 10px;
+      position: fixed;
+      top: 16px;
+      right: 20px;
+      z-index: 100;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      background: rgba(10,15,35,0.75);
+      border: 1px solid rgba(80,120,255,0.25);
+      border-radius: 30px;
+      padding: 7px 12px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(74,143,255,0.1);
     }
     .theme-bar span {
-      font-family: 'Orbitron', sans-serif; font-size: 0.6rem;
-      letter-spacing: 2px; color: var(--text-dim); margin-right: 4px;
+      font-family: 'Orbitron', sans-serif; font-size: 0.55rem;
+      letter-spacing: 2px; color: var(--text-dim); margin-right: 2px;
     }
     .theme-btn {
-      width: 22px; height: 22px; border-radius: 50%;
+      width: 20px; height: 20px; border-radius: 50%;
       border: 2px solid transparent; cursor: pointer;
       transition: transform 0.2s, border-color 0.2s;
     }
     .theme-btn:hover { transform: scale(1.2); }
-    .theme-btn.active { border-color: #fff; transform: scale(1.2); }
+    .theme-btn.active { border-color: #fff; transform: scale(1.15); }
   </style>
 </head>
 <body>
+
+<div class="theme-bar">
+  <span>THEME</span>
+  <button class="theme-btn active" id="tb0" style="background:linear-gradient(135deg,#00f5ff,#ff2d9b)" onclick="setTheme(0)" title="Cyberpunk"></button>
+  <button class="theme-btn" id="tb1" style="background:linear-gradient(135deg,#ff8c00,#ffe600)" onclick="setTheme(1)" title="Retro"></button>
+  <button class="theme-btn" id="tb2" style="background:linear-gradient(135deg,#0066ff,#00ccff)" onclick="setTheme(2)" title="Ocean"></button>
+  <button class="theme-btn" id="tb3" style="background:linear-gradient(135deg,#9b00ff,#ff00cc)" onclick="setTheme(3)" title="Synthwave"></button>
+  <button class="theme-btn" id="tb4" style="background:linear-gradient(135deg,#00ff41,#007700)" onclick="setTheme(4)" title="Matrix"></button>
+</div>
 
 <header>
   <h1>NEXRIS</h1>
@@ -335,14 +354,7 @@
   <div class="ctrl-item"><span class="key">ESC</span> Pause</div>
 </div>
 
-<div class="theme-bar">
-  <span>THEME</span>
-  <button class="theme-btn active" id="tb0" style="background:linear-gradient(135deg,#00f5ff,#ff2d9b)" onclick="setTheme(0)" title="Cyberpunk"></button>
-  <button class="theme-btn" id="tb1" style="background:linear-gradient(135deg,#ff8c00,#ffe600)" onclick="setTheme(1)" title="Retro"></button>
-  <button class="theme-btn" id="tb2" style="background:linear-gradient(135deg,#0066ff,#00ccff)" onclick="setTheme(2)" title="Ocean"></button>
-  <button class="theme-btn" id="tb3" style="background:linear-gradient(135deg,#9b00ff,#ff00cc)" onclick="setTheme(3)" title="Synthwave"></button>
-  <button class="theme-btn" id="tb4" style="background:linear-gradient(135deg,#00ff41,#007700)" onclick="setTheme(4)" title="Matrix"></button>
-</div>
+
 
 <script>
 // ── Constants ──────────────────────────────────────────────────────────────
